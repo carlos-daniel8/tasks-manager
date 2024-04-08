@@ -1,8 +1,8 @@
-import Login from "./pages/login";
-import './global.css';
+import Routes from './routes'
+import './global.css'
 
 export default function App() {
   return (
-      <Login/>
+      <Routes/>
   )
 }
