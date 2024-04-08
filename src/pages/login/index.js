@@ -6,8 +6,8 @@ export default function Login(){
             <section className="form">
                 <form>
                     <h1>Login</h1>
-                    <input placeholder="Username"/>
-                    <input placeholder="Password"/>
+                    <input type="email" placeholder="E-mail"/>
+                    <input type="password" placeholder="Password"/>
                     <button type="submit" className="button">Entrar</button>
                 </form>
             </section>
