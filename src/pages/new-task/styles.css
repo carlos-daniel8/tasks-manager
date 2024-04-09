@@ -13,19 +13,37 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.content h1 {
+    text-align: center;
+}
+
+.title-form {
+    margin-bottom: 20px;
+}
+
 .form {
     margin-bottom: 20px;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 .back-link button {
-    background-color: #483D8B;
+    background-color: #DC143C;
+    margin-top: 5px;   
+    width: 360px; 
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    margin-top: 5px;
     cursor: pointer;
+    display: inline-block;
 }
+
 
 .task-form {
     display: flex;
@@ -51,7 +69,7 @@ input[type="date"] {
     font-size: 16px;
 }
 
-button[type="submit"] {
+.create-task-button {
     background-color: #1DB954;
     color: #fff;
     padding: 10px 20px;
@@ -62,6 +80,6 @@ button[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
+.create-task-button:hover {
     background-color: #168f49;
 }

@@ -25,10 +25,12 @@ export default function NewTask() {
                         <label htmlFor="date">Data de Criação:</label>
                         <input id="date" type="date" />
                     </div>
-                    <button type="submit">Cadastrar</button>
-                    <Link className="back-link" to="/tasks">
-                        <button>Voltar</button>
-                </Link>
+                    <button type="submit" className="create-task-button">
+                        Cadastrar
+                    </button>
+                        <Link className="back-link" to="/tasks">
+                            <button>Cancelar</button>
+                        </Link>
                 </form>
             </div>
         </div>
