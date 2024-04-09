@@ -5,7 +5,7 @@ export default function NewTask() {
     return (
         <div className="new-task-container">
             <div className="content">
-                <section className="form">
+                <section className="form-header">
                     <h1>Cadastrar Nova Tarefa</h1>
                 </section>
                 <form className="task-form">

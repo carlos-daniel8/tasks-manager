@@ -21,8 +21,17 @@
     margin-bottom: 20px;
 }
 
-.form {
+.form-header {
     margin-bottom: 20px;
+    background-color: #4B0082;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.form-header h1 {
+    color: #fff;
+    margin: 0 auto;
 }
 
 .header {
@@ -44,6 +53,9 @@
     display: inline-block;
 }
 
+.back-link button:hover {
+    background-color: #dc1414;
+}
 
 .task-form {
     display: flex;
@@ -80,5 +92,5 @@ textarea {
 }
 
 .create-task-button:hover {
-    background-color: #168f49;
+    background-color: #2a8f16;
 }
