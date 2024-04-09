@@ -1,7 +1,7 @@
 import './styles.css'
 import { Link } from 'react-router-dom'
 
-export default function Task(){
+export default function Tasks(){
     return (
         <div className="task-container">
             <header>
@@ -10,7 +10,7 @@ export default function Task(){
                         <Link to="categories">Categorias</Link>
                     </button>
                     <button className="new-task-button">
-                        <Link to="task/new">Nova tarefa</Link>
+                        <Link to="tasks/new-task">Nova tarefa</Link>
                     </button>
                     <button className="logout-button">
                         <h3>Sair</h3>

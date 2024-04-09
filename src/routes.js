@@ -1,13 +1,15 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Login from "./pages/login"
-import Task from "./pages/task"
+import Tasks from './pages/task'
+import NewTask from "./pages/new-task"
 
 export default function Routes(){
     return (
         <BrowserRouter>
             <Switch>
                 <Route path="/" exact component={Login}/>
-                <Route path="/task" component={Task}/>
+                <Route path="/tasks" component={Tasks}/>
+                <Route path="/new-task" component={NewTask}/>
             </Switch>
         </BrowserRouter>
     )
