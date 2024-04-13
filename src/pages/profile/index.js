@@ -36,6 +36,9 @@ export default function Profile() {
             <strong>Localização:</strong>
             <p>Canoas</p>
           </div>
+          <button>
+            Editar Informações
+          </button>
         </div>
       </div>
     </div>
