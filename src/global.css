@@ -28,3 +28,14 @@ form input {
     margin-top: 16px;
 }
 
+.logout-button {
+    height: 45px;
+    width: 110px;
+    border-radius: 10px;
+    background-color: #B22222;
+    color: #fff;
+  }
+  
+  .logout-button:hover {
+    background-color: #800000;
+  }
