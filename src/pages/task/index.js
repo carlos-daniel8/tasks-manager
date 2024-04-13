@@ -6,12 +6,16 @@ export default function Tasks(){
         <div className="task-container">
             <header>
                     <h1 className="title">Gerenciador de Tarefas</h1>
-                    <button className="categories-button">
-                        <Link to="categories">Categorias</Link>
-                    </button>
-                    <button className="new-task-button">
-                        <Link to="tasks/new-task">Nova tarefa</Link>
-                    </button>
+                    <Link to="/tasks/categories">
+                        <button className="categories-button">
+                            Categorias
+                        </button>
+                    </Link>
+                    <Link to="/tasks/new-task">
+                        <button className="new-task-button">
+                            Nova tarefa
+                        </button>
+                    </Link>
                     <button className="logout-button">
                         <h3>Sair</h3>
                     </button>
