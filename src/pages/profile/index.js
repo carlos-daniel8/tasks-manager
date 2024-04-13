@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import userProfileIcon from '../../assets/user-profile-icon.png';
-import './styles.css';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import userProfileIcon from '../../assets/user-profile-icon.png'
+import './styles.css'
 
 export default function Profile() {
   return (
