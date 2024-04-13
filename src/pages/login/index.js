@@ -12,11 +12,14 @@ export default function Login(){
     async function login(e){
         e.preventDefault()
 
-        const mockEmail = 'test@example.com'
-        const mockPassword = 'password'
+        const mockEmail = 'john@gmail.com'
+        const mockPassword = 'my-password-123'
 
         if(email === mockEmail && password === mockPassword){
             navigate('/tasks')
+
+            localStorage.setItem('email', email)
+            localStorage.setItem('password', password)
         } else {
             alert('Login failed! Try again')
         }

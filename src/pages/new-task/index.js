@@ -19,7 +19,7 @@ export default function NewTask() {
                     </div>
                     <div className="form-group">
                         <label htmlFor="category">Categoria:</label>
-                        <input id="category" type="text" placeholder="Digite a categoria da tarefa" />
+                        <input id="category" type="text" placeholder="Escolha a categoria da tarefa" />
                     </div>
                     <button type="submit" className="create-task-button">
                         Cadastrar
