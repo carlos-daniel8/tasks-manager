@@ -1,7 +1,22 @@
+import { useState, useEffect } from 'react'
 import './styles.css'
 import { Link } from 'react-router-dom'
 
 export default function Tasks(){
+    const [tasks, setTasks] = useState([]);
+
+    useEffect(() => {
+        const storedTasks = JSON.parse(localStorage.getItem('tasks'));
+        if (storedTasks) {
+            setTasks(storedTasks);
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }, [tasks]);
+
+
     return (
         <div className="task-container">
             <header>
@@ -25,128 +40,6 @@ export default function Tasks(){
                         <h3>Sair</h3>
                     </button>
             </header>
-            <ul>
-                <li>
-                    <strong>Nome</strong>
-                    <p>Mudar a cor do botão X</p>
-                    <strong>Descrição</strong>
-                    <p>Alteração feita a pedido do designer da sprint</p>
-                    <strong>Categoria</strong>
-                    <p>Sustentação</p>
-                    <strong>Status</strong>
-                    <p>Em andamento</p>
-                    <strong>Data de Criação</strong>
-                    <p>08/04/2024</p>
-
-                    <button className="update-button">Editar</button>
-                    <button className="delete-button">Excluir</button>
-                </li>
-                <li>
-                    <strong>Nome</strong>
-                    <p>Mudar a cor do botão X</p>
-                    <strong>Descrição</strong>
-                    <p>Alteração feita a pedido do designer da sprint</p>
-                    <strong>Categoria</strong>
-                    <p>Sustentação</p>
-                    <strong>Status</strong>
-                    <p>Em andamento</p>
-                    <strong>Data de Criação</strong>
-                    <p>08/04/2024</p>
-                    
-                    <button className="update-button">Editar</button>
-                    <button className="delete-button">Excluir</button>
-                </li>
-                <li>
-                    <strong>Nome</strong>
-                    <p>Mudar a cor do botão X</p>
-                    <strong>Descrição</strong>
-                    <p>Alteração feita a pedido do designer da sprint</p>
-                    <strong>Categoria</strong>
-                    <p>Sustentação</p>
-                    <strong>Status</strong>
-                    <p>Em andamento</p>
-                    <strong>Data de Criação</strong>
-                    <p>08/04/2024</p>
-                    
-                    <button className="update-button">Editar</button>
-                    <button className="delete-button">Excluir</button>
-                </li>
-                <li>
-                    <strong>Nome</strong>
-                    <p>Mudar a cor do botão X</p>
-                    <strong>Descrição</strong>
-                    <p>Alteração feita a pedido do designer da sprint</p>
-                    <strong>Categoria</strong>
-                    <p>Sustentação</p>
-                    <strong>Status</strong>
-                    <p>Em andamento</p>
-                    <strong>Data de Criação</strong>
-                    <p>08/04/2024</p>
-                    
-                    <button className="update-button">Editar</button>
-                    <button className="delete-button">Excluir</button>
-                </li>
-                <li>
-                    <strong>Nome</strong>
-                    <p>Mudar a cor do botão X</p>
-                    <strong>Descrição</strong>
-                    <p>Alteração feita a pedido do designer da sprint</p>
-                    <strong>Categoria</strong>
-                    <p>Sustentação</p>
-                    <strong>Status</strong>
-                    <p>Em andamento</p>
-                    <strong>Data de Criação</strong>
-                    <p>08/04/2024</p>
-                    
-                    <button className="update-button">Editar</button>
-                    <button className="delete-button">Excluir</button>
-                </li>
-                <li>
-                    <strong>Nome</strong>
-                    <p>Mudar a cor do botão X</p>
-                    <strong>Descrição</strong>
-                    <p>Alteração feita a pedido do designer da sprint</p>
-                    <strong>Categoria</strong>
-                    <p>Sustentação</p>
-                    <strong>Status</strong>
-                    <p>Em andamento</p>
-                    <strong>Data de Criação</strong>
-                    <p>08/04/2024</p>
-                    
-                    <button className="update-button">Editar</button>
-                    <button className="delete-button">Excluir</button>
-                </li>
-                <li>
-                    <strong>Nome</strong>
-                    <p>Mudar a cor do botão X</p>
-                    <strong>Descrição</strong>
-                    <p>Alteração feita a pedido do designer da sprint</p>
-                    <strong>Categoria</strong>
-                    <p>Sustentação</p>
-                    <strong>Status</strong>
-                    <p>Em andamento</p>
-                    <strong>Data de Criação</strong>
-                    <p>08/04/2024</p>
-                    
-                    <button className="update-button">Editar</button>
-                    <button className="delete-button">Excluir</button>
-                </li>
-                <li>
-                    <strong>Nome</strong>
-                    <p>Mudar a cor do botão X</p>
-                    <strong>Descrição</strong>
-                    <p>Alteração feita a pedido do designer da sprint</p>
-                    <strong>Categoria</strong>
-                    <p>Sustentação</p>
-                    <strong>Status</strong>
-                    <p>Em andamento</p>
-                    <strong>Data de Criação</strong>
-                    <p>08/04/2024</p>
-                    
-                    <button className="update-button">Editar</button>
-                    <button className="delete-button">Excluir</button>
-                </li>
-            </ul>
         </div>
     )
 }

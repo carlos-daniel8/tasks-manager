@@ -1,24 +1,38 @@
 import './styles.css'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-export default function NewCategory() {
+export default function NewCategory({ addCategory }) {
+
+    const [name, setName] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        addCategory(name)
+        setName("");
+    }
+
     return (
         <div className="new-task-container">
             <div className="content">
                 <section className="form-header">
                     <h1>Cadastrar Nova Categoria</h1>
                 </section>
-                <form className="task-form">
+                <form className="task-form" onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="name">Nome:</label>
-                        <input id="name" type="text" placeholder="Digite o nome da categoria" />
+                        <input
+                            type="text" 
+                            placeholder="Digite o nome da categoria" 
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
                     </div>
-                    <button type="submit" className="create-task-button">
-                        Cadastrar
-                    </button>
-                        <Link className="back-link" to="/tasks/categories">
-                            <button>Cancelar</button>
-                        </Link>
+                        <button 
+                            type="submit" 
+                            className="create-task-button"
+                        >
+                            Cadastrar
+                        </button>
                 </form>
             </div>
         </div>

@@ -7,7 +7,7 @@ export default function Profile() {
   return (
     <div className="user-container">
       <header>
-        <h1 className="title">Minhas Informações Pessoais</h1>
+        <h1 className="title">Informações Pessoais</h1>
         <Link to="/tasks">
             <button className="new-task-button">
                 Página Inicial
