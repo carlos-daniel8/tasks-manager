@@ -5,8 +5,8 @@ export default function Category(){
     return (
         <div className="category-container">
             <header>
-                    <Link to="/">
-                        <button className="new-task-button">
+                    <Link to="/tasks/profile">
+                        <button className="my-profile-button">
                             Meu perfil
                         </button>
                     </Link>

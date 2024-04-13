@@ -5,6 +5,11 @@ export default function Tasks(){
     return (
         <div className="task-container">
             <header>
+                    <Link to="/tasks/profile">
+                        <button className="my-profile-button">
+                            Meu perfil
+                        </button>
+                    </Link>
                     <h1 className="title">Gerenciador de Tarefas</h1>
                     <Link to="/tasks/categories">
                         <button className="categories-button">

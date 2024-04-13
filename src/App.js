@@ -1,6 +1,7 @@
 import Login from "./pages/login"
-import Task from './pages/task'
+import Task from "./pages/task"
 import NewTask from "./pages/new-task"
+import Profile from "./pages/profile"
 
 import './global.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -24,6 +25,9 @@ export default function App() {
       </Routes>
       <Routes>
         <Route path = "/tasks/categories/new-category" element={<NewCategory />}> </Route>
+      </Routes>
+      <Routes>
+        <Route path = "/tasks/profile/" element={<Profile />}> </Route>
       </Routes>
     </Router>
   )
