@@ -29,9 +29,6 @@ export default function NewTask() {
         };
     
         try {
-            const storedTasks = JSON.parse(localStorage.getItem('task')) || []
-            const updatedTasks = [...storedTasks, newTask]
-            localStorage.setItem('task', JSON.stringify(updatedTasks));
 
             setTask([...task, newTask]);
             setName("");

@@ -7,24 +7,32 @@ import NewCategory from '../new-category'
 export default function Category(){
     const [categories, setCategories] = useState([
         {
-            id: 1,
+            id: uuidv4(),
             name: "Redução de Custos"
         },
         {
-            id: 2,
+            id: uuidv4(),
             name: "Sustentação"
         },
         {
-            id: 3,
+            id: uuidv4(),
             name: "Inovação"
         },
         {
-            id: 4,
+            id: uuidv4(),
             name: "Aprendizado"
         },
         {
-            id: 4,
+            id: uuidv4(),
             name: "Gerência de Projetos"
+        },
+        {
+            id: uuidv4(),
+            name: "Desenvolvimento Pessoal"
+        },
+        {
+            id: uuidv4(),
+            name: "Financeiro"
         }
     ])
 
@@ -38,6 +46,11 @@ export default function Category(){
             }
         ]
         setCategories(newCategories)
+    }
+
+    const removeCategory = (id) => {
+        const filteredCategories = categories.filter(category => category.id !== id);
+        setCategories(filteredCategories)
     }
 
     return (
@@ -64,12 +77,12 @@ export default function Category(){
                         <p>{category.name}</p>
                         <div>
                             <button className="update-button">Editar</button>
-                            <button className="delete-button">Excluir</button>
+                            <button className="delete-button" onClick={() => removeCategory(category.id) }>Excluir</button>
                         </div>
                     </div>
                 ))}
             </div>
-            <NewCategory addCategory={addCategory}/>
+            <NewCategory addCategory={addCategory} />
         </div>
     )
 }
