@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import './styles.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 import NewCategory from '../new-category'
 
 export default function Category(){
+    const navigate = useNavigate();
+
     const [categories, setCategories] = useState([
         {
             id: uuidv4(),
@@ -46,6 +48,10 @@ export default function Category(){
             }
         ]
         setCategories(newCategories)
+    }
+
+    const editCategory = (id, newName) => {
+        navigate.push(`tasks/categories/edit/${id}`)
     }
 
     const removeCategory = (id) => {
