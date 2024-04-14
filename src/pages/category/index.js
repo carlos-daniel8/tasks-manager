@@ -82,7 +82,6 @@ export default function Category(){
                     <div key={category.id} className="category">
                         <p>{category.name}</p>
                         <div>
-                            <button className="update-button">Editar</button>
                             <button className="delete-button" onClick={() => removeCategory(category.id) }>Excluir</button>
                         </div>
                     </div>
