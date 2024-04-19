@@ -68,9 +68,9 @@ export default function Category(){
             <div className="categories-wrapper">
                 {categories.map((category) => (
                     <div key={category.id} className="category">
-                        <p>Nome: {category.name}</p>
+                        <p><strong>Nome:</strong> {category.name}</p>
                         <div>
-                            <button className="delete-button" onClick={() => removeCategory(category.id) }>Remover</button>
+                            <button className="delete-button" onClick={() => removeCategory(category.id) }><strong>X</strong></button>
                         </div>
                     </div>
                 ))}
