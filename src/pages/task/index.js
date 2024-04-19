@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import './styles.css';
-import { v4 as uuidv4 } from 'uuid';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
+import './styles.css'
+import { v4 as uuidv4 } from 'uuid'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Tasks() {
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     const [tasks, setTasks] = useState([
         {
@@ -35,18 +35,24 @@ export default function Tasks() {
             estimatedDays: 3 + " " + "dias",
             category: "Sustentação"
         }
-    ]);
+    ])
+
 
     useEffect(() => {
-        const storedTasks = JSON.parse(localStorage.getItem('tasks'));
+        const storedTasks = JSON.parse(localStorage.getItem('tasks'))
         if (storedTasks) {
-            setTasks(storedTasks);
+            setTasks(storedTasks)
         }
-    }, []);
+    }, [])
 
     useEffect(() => {
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-    }, [tasks]);
+        localStorage.setItem('tasks', JSON.stringify(tasks))
+    }, [tasks])
+
+    const removeTask = (id) => {
+        const filteredTasks = tasks.filter(task => task.id !== id);
+        setTasks(filteredTasks)
+    }
 
     return (
         <div className="task-container">
@@ -81,11 +87,11 @@ export default function Tasks() {
                         <div className="task-buttons">
                             <button className="finish-task-button">Finalizar</button>
                             <button className="update-task-button">Editar</button>
-                            <button className="remove-task-button">Remover</button>
+                            <button className="remove-task-button" onClick={() => removeTask(task.id)}>Remover</button>
                         </div>
                     </div>
                 ))}
             </div>
         </div>
-    );
+    )
 }

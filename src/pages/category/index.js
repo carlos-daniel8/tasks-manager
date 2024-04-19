@@ -26,14 +26,6 @@ export default function Category(){
         },
         {
             id: uuidv4(),
-            name: "Gerência de Projetos"
-        },
-        {
-            id: uuidv4(),
-            name: "Desenvolvimento Pessoal"
-        },
-        {
-            id: uuidv4(),
             name: "Financeiro"
         }
     ])
@@ -48,10 +40,6 @@ export default function Category(){
             }
         ]
         setCategories(newCategories)
-    }
-
-    const editCategory = (id, newName) => {
-        navigate.push(`tasks/categories/edit/${id}`)
     }
 
     const removeCategory = (id) => {
@@ -80,9 +68,9 @@ export default function Category(){
             <div className="categories-wrapper">
                 {categories.map((category) => (
                     <div key={category.id} className="category">
-                        <p>{category.name}</p>
+                        <p>Nome: {category.name}</p>
                         <div>
-                            <button className="delete-button" onClick={() => removeCategory(category.id) }>Excluir</button>
+                            <button className="delete-button" onClick={() => removeCategory(category.id) }>Remover</button>
                         </div>
                     </div>
                 ))}
