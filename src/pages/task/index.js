@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './styles.css'
 import { v4 as uuidv4 } from 'uuid'
 import { Link, useNavigate } from 'react-router-dom'
+import NewTask from '../new-task'
 
 export default function Tasks() {
     const navigate = useNavigate()
@@ -59,8 +60,24 @@ export default function Tasks() {
     }
 
     const completeTask = (id) => {
-        const newTasks = [...tasks]
-        newTasks.map((task) => task.id === id ? task.isCompleted = !task.isCompleted : task)
+        const newTasksCompleted = [...tasks]
+        newTasksCompleted.map((task) => task.id === id ? task.isCompleted = !task.isCompleted : task)
+        setTasks(newTasksCompleted)
+    }
+
+    const addTask = (name, goal, estimatedDays, category) => {
+
+        const newTasks = [
+            ...tasks, 
+            {
+                id: uuidv4(),
+                name,
+                goal,
+                estimatedDays,
+                category,
+                isCompleted: false
+            }
+        ]
         setTasks(newTasks)
     }
 
@@ -78,11 +95,11 @@ export default function Tasks() {
                         Categorias
                     </button>
                 </Link>
-                <Link to="/tasks/new-task">
+                {/* <Link to="/tasks/new-task">
                     <button className="new-task-button">
                         Nova tarefa
                     </button>
-                </Link>
+                </Link> */}
                 <button className="logout-button">
                     <h3>Sair</h3>
                 </button>
@@ -90,7 +107,7 @@ export default function Tasks() {
             <div className="tasks-wrapper">
                 {tasks.map((task) => (
                     <div key={task.id} className="task" >
-                        <h3 style={{ textDecoration: task.isCompleted ? "line-through" : "" }} >{task.name}</h3>
+                        <h3 style={{ textDecoration: task.isCompleted ? "line-through" : "" }} ><strong>Nome:</strong>{task.name}</h3>
                         <p style={{ textDecoration: task.isCompleted ? "line-through" : "" }}><strong>Objetivo:</strong> {task.goal}</p>
                         <p style={{ textDecoration: task.isCompleted ? "line-through" : "" }}><strong>Tempo Previsto:</strong> {task.estimatedDays}</p>
                         <p style={{ textDecoration: task.isCompleted ? "line-through" : "" }}><strong>Categoria:</strong> {task.category}</p>
@@ -101,6 +118,9 @@ export default function Tasks() {
                         </div>
                     </div>
                 ))}
+            </div>
+            <div>
+                <NewTask addTask={addTask} />
             </div>
         </div>
     )

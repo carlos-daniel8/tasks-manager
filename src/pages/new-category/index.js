@@ -1,15 +1,14 @@
 import './styles.css'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 
 export default function NewCategory({ addCategory }) {
 
-    const [name, setName] = useState("");
+    const [name, setName] = useState("")
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         addCategory(name)
-        setName("");
+        setName("")
     }
 
     return (

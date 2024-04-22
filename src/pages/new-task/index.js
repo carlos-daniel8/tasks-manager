@@ -1,53 +1,29 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
 import './styles.css'
 
-export default function NewTask() {
-
-    const [id, setId] = useState(null)
+export default function NewTask({ addTask }) {
     const [name, setName] = useState("")
-    const [description, setDescription] = useState("")
+    const [goal, setGoal] = useState("")
+    const [estimatedDays, setEstimatedDays] = useState("")
     const [category, setCategory] = useState("")
-    const [creationDate, setCreationDate] = useState("")
-    const [task, setTask] = useState("")
 
-    const email = localStorage.getItem('email')
-    const password = localStorage.getItem('password')
-
-    const navigate = useNavigate()
-
-    function createNewTask(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
-    
-        const newTask = {
-            id: task.length + 1,
-            name,
-            description,
-            category,
-            creationDate: new Date().toISOString() 
-        };
-    
-        try {
-
-            setTask([...task, newTask]);
-            setName("");
-            setDescription("");
-            setCategory("");
-            alert("Tarefa criada com sucesso!");
-            navigate("/tasks")
-        } catch (error) {
-            alert("Erro ao criar a tarefa");
-        }
+        addTask(name, goal, estimatedDays, category)
+        setName("")
+        setGoal("")
+        setEstimatedDays("")
+        setCategory("")
     }
 
     return (
         <div className="new-task-container">
             <div className="content">
                 <section className="form-header">
-                    <h1>Cadastrar Nova Tarefa</h1>
+                    <h1>Adicionar Tarefa</h1>
                 </section>
-                <form onSubmit={createNewTask} className="task-form">
+                <form className="task-form" onSubmit={handleSubmit}>
                     <div className="form-group">
                         <input 
                             placeholder="Digite o nome da tarefa"
@@ -57,9 +33,16 @@ export default function NewTask() {
                     </div>
                     <div className="form-group">
                         <input 
-                            placeholder="Digite uma breve descrição da tarefa"
-                            value={description}
-                            onChange={e => setDescription(e.target.value)}
+                            placeholder="Digite o objetivo da tarefa"
+                            value={goal}
+                            onChange={e => setGoal(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input 
+                            placeholder="Digite a quantidade de dias estimados"
+                            value={estimatedDays}
+                            onChange={e => setEstimatedDays(e.target.value)}
                         />
                     </div>
                     <div className="form-group">
@@ -69,12 +52,12 @@ export default function NewTask() {
                             onChange={e => setCategory(e.target.value)}
                         />
                     </div>
-                    <button type="submit" className="create-task-button">
-                        Cadastrar
+                    <button 
+                        type="submit" 
+                        className="create-task-button"
+                    >
+                            Cadastrar
                     </button>
-                        <Link className="back-link" to="/tasks">
-                            <button>Cancelar</button>
-                        </Link>
                 </form>
             </div>
         </div>
