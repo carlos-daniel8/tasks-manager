@@ -36,16 +36,17 @@
   margin-bottom: 20px;
   padding: 25px;
   border-radius: 10px;
-  height: 235px;
+  height: 330px;
   width: 415px;
 }
 
 .task h3 {
-  margin-top: 0;
+  margin-top: 15px;
 }
 
 .task p {
   margin: 10px 0;
+  padding-bottom: 25px;
 }
 
 .task-buttons {
@@ -95,4 +96,17 @@
 .task-buttons .remove-task-button {
   background-color: #B22222;
   padding: 5px;
+}
+
+.cancel-edit-button {
+  background-color: #B22222;
+  padding: 5px;
+  margin-top: 8px;
+}
+
+.confirm-edit-button {
+  background-color: #00BFFF;
+  padding: 5px;
+  margin: 5px;
+  margin-top: 10px;
 }

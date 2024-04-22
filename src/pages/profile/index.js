@@ -8,7 +8,8 @@ export default function Profile() {
     name: 'John Doe',
     email: 'john@gmail.com',
     jobTitle: 'DevOps Engineer'
-  });
+  })
+  
   const [editing, setEditing] = useState(false)
 
   const handleInputChange = (event) => {
