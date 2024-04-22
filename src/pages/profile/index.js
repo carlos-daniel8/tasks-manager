@@ -29,15 +29,11 @@ export default function Profile() {
             <p>john@gmail.com</p>
           </div>
           <div className="detail">
-            <strong>Idade:</strong>
-            <p>25</p>
-          </div>
-          <div className="detail">
-            <strong>Localização:</strong>
-            <p>Canoas</p>
+            <strong>Cargo:</strong>
+            <p>DevOps Engineer</p>
           </div>
           <button>
-            Editar Informações
+            Editar
           </button>
         </div>
       </div>

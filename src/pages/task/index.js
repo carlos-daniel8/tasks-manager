@@ -12,28 +12,32 @@ export default function Tasks() {
             name: "Aprender React",
             goal: "Me tornar um Dev React experiente",
             estimatedDays: 450 + " " + "dias",
-            category: "Aprendizado"
+            category: "Aprendizado",
+            isCompleted: false
         },
         {
             id: uuidv4(),
             name: "Desligar máquinas EC2 não utilizadas",
             goal: "Implementar FinOps na organização",
             estimatedDays: 5 + " " + "dias",
-            category: "Redução de Custos"
+            category: "Redução de Custos",
+            isCompleted: false
         },
         {
             id: uuidv4(),
             name: "Estudar Golang",
             goal: "Criar ferramentas DevOps",
             estimatedDays: 650 + " " + "dias",
-            category: "Inovação"
+            category: "Inovação",
+            isCompleted: false
         },
         {
             id: uuidv4(),
             name: "Realizar backup do banco de dados RDS",
             goal: "Persistência dos dados da aplicação",
             estimatedDays: 3 + " " + "dias",
-            category: "Sustentação"
+            category: "Sustentação",
+            isCompleted: false
         }
     ])
 
@@ -54,8 +58,14 @@ export default function Tasks() {
         setTasks(filteredTasks)
     }
 
+    const completeTask = (id) => {
+        const newTasks = [...tasks]
+        newTasks.map((task) => task.id === id ? task.isCompleted = !task.isCompleted : task)
+        setTasks(newTasks)
+    }
+
     return (
-        <div className="task-container">
+        <div className="task-container" >
             <header>
                 <Link to="/tasks/profile">
                     <button className="my-profile-button">
@@ -79,13 +89,13 @@ export default function Tasks() {
             </header>
             <div className="tasks-wrapper">
                 {tasks.map((task) => (
-                    <div key={task.id} className="task">
-                        <h3>{task.name}</h3>
-                        <p><strong>Objetivo:</strong> {task.goal}</p>
-                        <p><strong>Tempo Previsto:</strong> {task.estimatedDays}</p>
-                        <p><strong>Categoria:</strong> {task.category}</p>
+                    <div key={task.id} className="task" >
+                        <h3 style={{ textDecoration: task.isCompleted ? "line-through" : "" }} >{task.name}</h3>
+                        <p style={{ textDecoration: task.isCompleted ? "line-through" : "" }}><strong>Objetivo:</strong> {task.goal}</p>
+                        <p style={{ textDecoration: task.isCompleted ? "line-through" : "" }}><strong>Tempo Previsto:</strong> {task.estimatedDays}</p>
+                        <p style={{ textDecoration: task.isCompleted ? "line-through" : "" }}><strong>Categoria:</strong> {task.category}</p>
                         <div className="task-buttons">
-                            <button className="finish-task-button">Finalizar</button>
+                            <button className="finish-task-button" onClick={() => completeTask(task.id)}>Finalizar</button>
                             <button className="update-task-button">Editar</button>
                             <button className="remove-task-button" onClick={() => removeTask(task.id)}>Remover</button>
                         </div>
