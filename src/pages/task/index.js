@@ -107,7 +107,7 @@ export default function Tasks() {
             <div className="tasks-wrapper">
                 {tasks.map((task) => (
                     <div key={task.id} className="task" >
-                        <h3 style={{ textDecoration: task.isCompleted ? "line-through" : "" }} ><strong>Nome:</strong>{task.name}</h3>
+                        <h3 style={{ textDecoration: task.isCompleted ? "line-through" : "" }} ><strong>Nome: </strong>{task.name}</h3>
                         <p style={{ textDecoration: task.isCompleted ? "line-through" : "" }}><strong>Objetivo:</strong> {task.goal}</p>
                         <p style={{ textDecoration: task.isCompleted ? "line-through" : "" }}><strong>Tempo Previsto:</strong> {task.estimatedDays}</p>
                         <p style={{ textDecoration: task.isCompleted ? "line-through" : "" }}><strong>Categoria:</strong> {task.category}</p>
