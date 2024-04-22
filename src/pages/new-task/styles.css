@@ -78,3 +78,12 @@ textarea {
 .create-task-button:hover {
     background-color: #2a8f16;
 }
+
+.new-task-container select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}

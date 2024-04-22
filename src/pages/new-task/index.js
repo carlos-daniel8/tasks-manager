@@ -46,11 +46,16 @@ export default function NewTask({ addTask }) {
                         />
                     </div>
                     <div className="form-group">
-                        <input 
-                            placeholder="Escolha a categoria da tarefa" 
+                        <select
                             value={category}
-                            onChange={e => setCategory(e.target.value)}
-                        />
+                            onChange={(e) => setCategory(e.target.value)}
+                        >
+                            <option value="">Selecione a categoria</option>
+                            <option value="Aprendizado">Aprendizado</option>
+                            <option value="Redução de Custos">Redução de Custos</option>
+                            <option value="Inovação">Inovação</option>
+                            <option value="Sustentação">Sustentação</option>
+                        </select>
                     </div>
                     <button 
                         type="submit" 
