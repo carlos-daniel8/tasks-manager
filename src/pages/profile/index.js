@@ -1,17 +1,36 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import userProfileIcon from '../../assets/user-profile-icon.png'
-import './styles.css'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import userProfileIcon from '../../assets/user-profile-icon.png';
+import './styles.css';
 
 export default function Profile() {
+  const [userData, setUserData] = useState({
+    name: 'John Doe',
+    email: 'john@gmail.com',
+    jobTitle: 'DevOps Engineer'
+  });
+  const [editing, setEditing] = useState(false)
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const toggleEditing = () => {
+    setEditing(prevEditing => !prevEditing);
+  };
+
   return (
     <div className="user-container">
       <header>
         <h1 className="title">Informações Pessoais</h1>
         <Link to="/tasks">
-            <button className="new-task-button">
-                Página Inicial
-            </button>
+          <button className="new-task-button">
+            Página Inicial
+          </button>
         </Link>
         <button className="logout-button">
           <h3>Sair</h3>
@@ -23,20 +42,47 @@ export default function Profile() {
         <div className="profile-details">
           <div className="detail">
             <strong>Nome</strong>
-            <p>John Doe</p>
+            {editing ? (
+              <input
+                type="text"
+                name="name"
+                value={userData.name}
+                onChange={handleInputChange}
+              />
+            ) : (
+              <p>{userData.name}</p>
+            )}
           </div>
           <div className="detail">
             <strong>Email</strong>
-            <p>john@gmail.com</p>
+            {editing ? (
+              <input
+                type="email"
+                name="email"
+                value={userData.email}
+                onChange={handleInputChange}
+              />
+            ) : (
+              <p>{userData.email}</p>
+            )}
           </div>
           <div className="detail">
             <strong>Cargo</strong>
-            <p>DevOps Engineer</p>
+            {editing ? (
+              <input
+                type="text"
+                name="jobTitle"
+                value={userData.jobTitle}
+                onChange={handleInputChange}
+              />
+            ) : (
+              <p>{userData.jobTitle}</p>
+            )}
           </div>
         </div>
-        <button className="update-button">
-            Editar
-          </button>
+        <button className="update-button" onClick={toggleEditing}>
+          {editing ? 'Salvar' : 'Editar'}
+        </button>
       </div>
     </div>
   );
