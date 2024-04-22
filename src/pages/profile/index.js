@@ -21,21 +21,21 @@ export default function Profile() {
         <img src={userProfileIcon} alt="User Avatar" className="avatar" />
         <div className="profile-details">
           <div className="detail">
-            <strong>Nome:</strong>
+            <strong>Nome</strong>
             <p>John Doe</p>
           </div>
           <div className="detail">
-            <strong>Email:</strong>
+            <strong>Email</strong>
             <p>john@gmail.com</p>
           </div>
           <div className="detail">
-            <strong>Cargo:</strong>
+            <strong>Cargo</strong>
             <p>DevOps Engineer</p>
           </div>
-          <button>
+        </div>
+        <button className="update-button">
             Editar
           </button>
-        </div>
       </div>
     </div>
   );

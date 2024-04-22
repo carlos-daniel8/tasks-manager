@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.user-container p{
+  margin-top: 5px;
+}
+
 .user-container header {
   width: 100%;
   display: flex;
@@ -45,13 +49,20 @@
 
 .user-profile {
   margin-top: 20px;
+  height: 500px;
   width: 100%;
   max-width: 600px;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
+  border: 1px solid black;
   text-align: center;
+}
+
+.user-profile div {
+  padding: 5px;
+  border: 3px solid black;
 }
 
 .avatar {
@@ -85,3 +96,11 @@
   text-decoration: none;
   margin-right: 20px;
   }
+
+.update-button {
+  margin-top: 40px;
+  height: 30px;
+  width: 150px;
+  color: #f5f5f5;
+  background-color: #6495ED;
+}

@@ -41,22 +41,6 @@
     margin-bottom: 20px;
 }
 
-.back-link button {
-    background-color: #DC143C;
-    margin-top: 5px;   
-    width: 360px; 
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block;
-}
-
-.back-link button:hover {
-    background-color: #dc1414;
-}
-
 .task-form {
     display: flex;
     flex-direction: column;
