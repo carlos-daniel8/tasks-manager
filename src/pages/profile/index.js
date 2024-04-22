@@ -19,6 +19,7 @@ export default function Profile() {
       </header>
       <div className="user-profile">
         <img src={userProfileIcon} alt="User Avatar" className="avatar" />
+        <h1>Meu Perfil</h1>
         <div className="profile-details">
           <div className="detail">
             <strong>Nome</strong>
