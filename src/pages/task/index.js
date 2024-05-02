@@ -146,9 +146,11 @@ export default function Tasks() {
                         Categorias
                     </button>
                 </Link>
-                <button className="logout-button">
-                    <h3>Sair</h3>
-                </button>
+                <Link to="/">
+                    <button className="logout-button">
+                        <h3>Sair</h3>
+                    </button>
+                </Link>
             </header>
             <SearchBar searchBar={searchBar} setSearchBar={setSearchBar}/>
             <Filter filter={filter} setFilter={setFilter}/>

@@ -52,9 +52,11 @@ export default function Category(){
                             Página Inicial
                         </button>
                     </Link>
-                    <button className="logout-button">
-                        <h3>Sair</h3>
-                    </button>
+                    <Link to="/">
+                        <button className="logout-button">
+                            <h3>Sair</h3>
+                        </button>
+                    </Link>
             </header>
             <div className="categories-wrapper">
                 {categories.map((category) => (

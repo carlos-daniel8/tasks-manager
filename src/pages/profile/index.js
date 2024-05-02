@@ -33,9 +33,11 @@ export default function Profile() {
             Página Inicial
           </button>
         </Link>
-        <button className="logout-button">
-          <h3>Sair</h3>
-        </button>
+        <Link to="/">
+          <button className="logout-button">
+            <h3>Sair</h3>
+          </button>
+        </Link>
       </header>
       <div className="user-profile">
         <img src={userProfileIcon} alt="User Avatar" className="avatar" />
