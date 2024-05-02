@@ -2,11 +2,11 @@
     width: 100%;
 }
 
-.title {
+.app-title {
   color: #fff;
-  text-align: center;
-  margin: 0;
-  flex: 1;
+  position: absolute; 
+  left: 20px; 
+  top: 20px;
 }
 
 .task-container header {

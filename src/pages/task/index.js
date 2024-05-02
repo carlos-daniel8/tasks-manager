@@ -3,6 +3,7 @@ import './styles.css'
 import { v4 as uuidv4 } from 'uuid'
 import { Link, useNavigate } from 'react-router-dom'
 import NewTask from '../new-task'
+import SearchBar from '../../components/search-bar/search-bar'
 
 export default function Tasks() {
     const navigate = useNavigate()
@@ -41,6 +42,8 @@ export default function Tasks() {
             isCompleted: false
         }
     ])
+
+    const [searchBar, setSearchBar] = useState("")
 
     const [editingTaskId, setEditingTaskId] = useState(null);
     const [editedTask, setEditedTask] = useState({
@@ -129,12 +132,12 @@ export default function Tasks() {
     return (
         <div className="task-container" >
             <header>
+            <h1 className="app-title">Gerenciador de Tarefas</h1>
                 <Link to="/tasks/profile">
                     <button className="my-profile-button">
                         Meu perfil
                     </button>
                 </Link>
-                <h1 className="title">Gerenciador de Tarefas</h1>
                 <Link to="/tasks/categories">
                     <button className="categories-button">
                         Categorias
@@ -144,8 +147,13 @@ export default function Tasks() {
                     <h3>Sair</h3>
                 </button>
             </header>
+            <SearchBar searchBar={searchBar} setSearchBar={setSearchBar}/>
             <div className="tasks-wrapper">
-                {tasks.map((task) => (
+                {tasks
+                .filter((task) =>
+                    task.name.toLowerCase().includes(searchBar.toLowerCase())
+                )
+                .map((task) => (
                     <div key={task.id} className="task" >
                         {editingTaskId === task.id ? (
                             <div>

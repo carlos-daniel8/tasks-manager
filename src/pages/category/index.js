@@ -46,6 +46,7 @@ export default function Category(){
     return (
         <div className="category-container">
             <header>
+                    <h1 className="app-title">Categorias</h1>
                     <Link to="/tasks">
                         <button className="new-task-button">
                             Página Inicial
