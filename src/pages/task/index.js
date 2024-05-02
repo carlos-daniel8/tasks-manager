@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { Link, useNavigate } from 'react-router-dom'
 import NewTask from '../new-task'
 import SearchBar from '../../components/search-bar/search-bar'
+import Filter from '../../components/filter/filter'
 
 export default function Tasks() {
     const navigate = useNavigate()
@@ -44,6 +45,8 @@ export default function Tasks() {
     ])
 
     const [searchBar, setSearchBar] = useState("")
+
+    const [filter, setFilter ] = useState("All")
 
     const [editingTaskId, setEditingTaskId] = useState(null);
     const [editedTask, setEditedTask] = useState({
@@ -148,8 +151,10 @@ export default function Tasks() {
                 </button>
             </header>
             <SearchBar searchBar={searchBar} setSearchBar={setSearchBar}/>
+            <Filter filter={filter} setFilter={setFilter}/>
             <div className="tasks-wrapper">
                 {tasks
+                .filter(task => (filter === 'All' || task.category === filter) && task.name.toLowerCase().includes(searchBar.toLowerCase()))
                 .filter((task) =>
                     task.name.toLowerCase().includes(searchBar.toLowerCase())
                 )
