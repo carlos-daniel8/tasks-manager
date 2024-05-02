@@ -84,27 +84,32 @@
 }
 
 .task-buttons .finish-task-button {
-  background-color: #00FF7F;
+  color: #FFFF;
+  background-color: #008000;
   padding: 5px;
 }
 
 .task-buttons .update-task-button {
+  color: #FFFF;
   background-color: #1E90FF;
   padding: 5px;
 }
 
 .task-buttons .remove-task-button {
+  color: #FFFF;
   background-color: #B22222;
   padding: 5px;
 }
 
 .cancel-edit-button {
+  color: #FFFF;
   background-color: #B22222;
   padding: 5px;
   margin-top: 8px;
 }
 
 .confirm-edit-button {
+  color: #FFFF;
   background-color: #00BFFF;
   padding: 5px;
   margin: 5px;

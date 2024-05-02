@@ -12,12 +12,12 @@ export default function NewCategory({ addCategory }) {
     }
 
     return (
-        <div className="new-task-container">
+        <div className="new-category-container">
             <div className="content">
                 <section className="form-header">
-                    <h1>Cadastrar Nova Categoria</h1>
+                    <h1>Nova Categoria</h1>
                 </section>
-                <form className="task-form" onSubmit={handleSubmit}>
+                <form className="category-form" onSubmit={handleSubmit}>
                     <div className="form-group">
                         <input
                             type="text" 
@@ -28,7 +28,7 @@ export default function NewCategory({ addCategory }) {
                     </div>
                         <button 
                             type="submit" 
-                            className="create-task-button"
+                            className="create-category-button"
                         >
                             Cadastrar
                         </button>

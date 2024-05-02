@@ -23,10 +23,6 @@ export default function Category(){
         {
             id: uuidv4(),
             name: "Aprendizado"
-        },
-        {
-            id: uuidv4(),
-            name: "Financeiro"
         }
     ])
 
@@ -50,12 +46,6 @@ export default function Category(){
     return (
         <div className="category-container">
             <header>
-                    <Link to="/tasks/profile">
-                        <button className="my-profile-button">
-                            Meu perfil
-                        </button>
-                    </Link>
-                    <h1 className="title">Categorias</h1>
                     <Link to="/tasks">
                         <button className="new-task-button">
                             Página Inicial
@@ -70,7 +60,7 @@ export default function Category(){
                     <div key={category.id} className="category">
                         <p><strong>Nome:</strong> {category.name}</p>
                         <div>
-                            <button className="delete-button" onClick={() => removeCategory(category.id) }><strong>X</strong></button>
+                            <button className="delete-button" onClick={() => removeCategory(category.id) }>Remover</button>
                         </div>
                     </div>
                 ))}

@@ -1,11 +1,11 @@
-.new-task-container {
+.new-category-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-.new-task-container h1{
+.new-category-container h1{
     padding: 45px;
 }
 
@@ -36,6 +36,7 @@
 .form-header h1 {
     color: #fff;
     margin: 0 auto;
+    display: flex;
 }
 
 .header {
@@ -61,7 +62,7 @@
     background-color: #dc1414;
 }
 
-.task-form {
+.category-form {
     display: flex;
     flex-direction: column;
 }
@@ -84,7 +85,7 @@ textarea {
     font-size: 16px;
 }
 
-.create-task-button {
+.create-category-button {
     background-color: #1DB954;
     color: #fff;
     padding: 10px 20px;
@@ -95,6 +96,6 @@ textarea {
     transition: background-color 0.3s ease;
 }
 
-.create-task-button:hover {
+.create-category-button:hover {
     background-color: #2a8f16;
 }
