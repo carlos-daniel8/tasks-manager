@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import userProfileIcon from '../../assets/user-profile-icon.png';
-import './styles.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import userProfileIcon from "../../assets/user-profile-icon.png";
+import "./styles.css";
 
 export default function Profile() {
   const [userData, setUserData] = useState({
-    name: 'John Doe',
-    email: 'john@gmail.com',
-    jobTitle: 'DevOps Engineer'
-  })
-  
-  const [editing, setEditing] = useState(false)
+    name: "John Doe",
+    email: "john@gmail.com",
+    jobTitle: "DevOps Engineer",
+  });
+
+  const [editing, setEditing] = useState(false);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setUserData(prevData => ({
+    setUserData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const toggleEditing = () => {
-    setEditing(prevEditing => !prevEditing);
+    setEditing((prevEditing) => !prevEditing);
   };
 
   return (
@@ -29,9 +29,7 @@ export default function Profile() {
       <header>
         <h1 className="title">Informações Pessoais</h1>
         <Link to="/tasks">
-          <button className="new-task-button">
-            Página Inicial
-          </button>
+          <button className="new-task-button">Página Inicial</button>
         </Link>
         <Link to="/">
           <button className="logout-button">
@@ -84,7 +82,7 @@ export default function Profile() {
           </div>
         </div>
         <button className="update-button" onClick={toggleEditing}>
-          {editing ? 'Salvar' : 'Editar'}
+          {editing ? "Salvar" : "Editar"}
         </button>
       </div>
     </div>
