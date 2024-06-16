@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 import { v4 as uuidv4 } from "uuid";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import NewTask from "../new-task";
 import SearchBar from "../../components/search-bar/search-bar";
 import Filter from "../../components/filter/filter";
 
 export default function Tasks() {
-  const navigate = useNavigate();
 
   const [tasks, setTasks] = useState([
     {
