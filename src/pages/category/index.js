@@ -1,11 +1,10 @@
 import { useState } from "react";
 import "./styles.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import NewCategory from "../new-category";
 
 export default function Category() {
-  const navigate = useNavigate();
 
   const [categories, setCategories] = useState([
     {
